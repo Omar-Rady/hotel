@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Sparkles, Globe } from 'lucide-react';
+import { Globe } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -12,9 +12,6 @@ const Footer = () => {
           {/* 1. Brand Section - Full Width on Mobile (col-span-2) */}
           <div className="col-span-2 lg:col-span-1 flex flex-col items-start text-right">
             <div className="flex items-center gap-3 mb-6 sm:mb-8">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#38264a] rounded-[1rem] sm:rounded-[1.25rem] flex items-center justify-center shadow-lg transform -rotate-6">
-                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
               <span className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-[#38264a] tracking-tighter">Gathern</span>
             </div>
             <div className="space-y-2 sm:space-y-3 text-gray-400 font-light text-sm sm:text-base">

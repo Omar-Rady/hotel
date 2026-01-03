@@ -103,11 +103,11 @@ const Badge = ({ badge, variant }: { badge: string; variant: string }) => {
         className="relative group w-fit"
       >
         <motion.div
-          className="absolute -inset-2 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500"
+          className="absolute -inset-2 bg-gold-gradient rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500"
           animate={{ rotate: [0, 1, -1, 0] }}
           transition={{ duration: 4, repeat: Infinity }}
         />
-        <div className="relative px-4 md:px-6 py-2 md:py-2.5 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs md:text-sm font-black rounded-lg flex items-center gap-2 shadow-2xl border border-white/20 backdrop-blur-sm overflow-hidden">
+        <div className="relative px-4 md:px-6 py-2 md:py-2.5 bg-gold-gradient text-white text-xs md:text-sm font-black rounded-xl flex items-center gap-2 shadow-2xl border border-white/20 backdrop-blur-sm overflow-hidden">
           <motion.div
             className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"
             initial={{ y: "100%" }}
