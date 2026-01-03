@@ -17,7 +17,7 @@ const FeaturesSection = () => {
       icon: <Star className="w-7 h-7 text-[#c2985a]" />,
       title: "تقييمات موثوقة",
       desc: "نظام تقييم حقيقي وشفاف 100% من ضيوف سابقين يضمن لك اختيار الوحدة المثالية بلا مفاجآت",
-      offset: "lg:mt-24",
+      offset: "lg:mt-0",
       lineHeight: 140
     },
     {

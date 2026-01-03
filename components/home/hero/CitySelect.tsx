@@ -22,7 +22,7 @@ export const CitySelect = () => {
 
     return (
         <Select open={open} onOpenChange={setOpen} value={selectedValue} onValueChange={setSelectedValue} dir='rtl'>
-            <SelectTrigger className="w-full h-full border-0 bg-transparent focus:ring-0 focus:ring-offset-0 px-0 md:px-8 text-right flex-col items-end [&>svg]:hidden group">
+            <SelectTrigger className="w-full h-full border-0 bg-transparent focus:ring-0 focus:ring-offset-0 px-0 md:px-3 text-right flex-col items-end [&>svg]:hidden group">
                 <span className="text-gray-400 text-xs font-black mb-1 block uppercase tracking-widest opacity-60 w-full text-right">
                     أختر المدينة
                 </span>

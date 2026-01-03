@@ -33,7 +33,7 @@ export const DesktopSearchForm = ({ date, setDate }: DesktopSearchFormProps) => 
                 <PopoverTrigger asChild>
                     <div className="flex-[1.8] flex h-full">
                         {/* Check-in */}
-                        <div className="flex-1 px-4 lg:px-8 text-right border-l border-gray-100 group cursor-pointer hover:bg-gray-50/80 h-full flex flex-col justify-center transition-all duration-300">
+                        <div className="flex-1 px-1 lg:px-3 text-right border-l border-gray-100 group cursor-pointer hover:bg-gray-50/80 h-full flex flex-col justify-center transition-all duration-300">
                             <label className="text-gray-400 text-xs font-black mb-1 block uppercase tracking-widest opacity-60">
                                 تاريخ الحجز
                             </label>
@@ -46,7 +46,7 @@ export const DesktopSearchForm = ({ date, setDate }: DesktopSearchFormProps) => 
                         </div>
 
                         {/* Check-out */}
-                        <div className="flex-1 px-4 lg:px-8 text-right group cursor-pointer hover:bg-gray-50/80 h-full flex flex-col justify-center transition-all duration-300">
+                        <div className="flex-1 px-1 lg:px-3 text-right group cursor-pointer hover:bg-gray-50/80 h-full flex flex-col justify-center transition-all duration-300">
                             <label className="text-gray-400 text-xs font-black mb-1 block uppercase tracking-widest opacity-60">
                                 تاريخ المغادرة
                             </label>
