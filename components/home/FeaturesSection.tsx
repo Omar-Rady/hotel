@@ -5,62 +5,87 @@ import { Sparkles, Users, Star } from 'lucide-react';
 import UnifiedHeading from "@/components/ui/UnifiedHeading";
 
 const FeaturesSection = () => {
+  const features = [
+    {
+      icon: <Sparkles className="w-7 h-7 text-[#c2985a]" />,
+      title: "أفضل الأسعار",
+      desc: "عروض حصرية وخصومات يومية مدروسة بعناية لتناسب ميزانيتك في أرقى العقارات والمنتجعات",
+      offset: "lg:mt-0",
+      lineHeight: 80
+    },
+    {
+      icon: <Star className="w-7 h-7 text-[#c2985a]" />,
+      title: "تقييمات موثوقة",
+      desc: "نظام تقييم حقيقي وشفاف 100% من ضيوف سابقين يضمن لك اختيار الوحدة المثالية بلا مفاجآت",
+      offset: "lg:mt-24",
+      lineHeight: 140
+    },
+    {
+      icon: <Users className="w-7 h-7 text-[#c2985a]" />,
+      title: "دعم 24/7",
+      desc: "فريق من الخبراء متاح على مدار الساعة للرد على استفساراتك وحل أي تحديات قد تواجهك بسرعة",
+      offset: "lg:mt-0",
+      lineHeight: 80
+    }
+  ];
+
   return (
-    <section className="bg-gradient-to-b from-white to-[#fcfaff] py-16 sm:py-20 lg:py-24 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-purple-100 rounded-full blur-[100px] opacity-30 -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-yellow-100 rounded-full blur-[100px] opacity-30 translate-y-1/2 -translate-x-1/2"></div>
+    <section className="bg-white py-20 sm:py-24 lg:py-32 relative overflow-hidden">
+      {/* Decorative Brand Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[120px] opacity-40 -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-50 rounded-full blur-[100px] opacity-30 translate-y-1/2 -translate-x-1/2"></div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center ">
+        <div className="text-center mb-20">
           <UnifiedHeading
             variant="section"
             title="**لماذا تختار منصة Gathern؟**"
             subtitle="نحن نوفر لك أفضل تجربة حجز في المملكة العربية السعودية مع ضمان الجودة والأمان"
-            badge="مميزاتنا"
+            badge="مميزاتنا الحصرية"
+            align="center"
           />
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-6 sm:pt-8 gap-6 sm:gap-8 lg:gap-10">
-            {[
-              {
-                icon: <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />,
-                title: "أفضل الأسعار",
-                desc: "عروض حصرية وخصومات يومية مدروسة بعناية لتناسب ميزانيتك في أفضل أرقى العقارات",
-                color: "bg-[#38264a]",
-                shadow: "shadow-purple-500/20"
-              },
-              {
-                icon: <Star className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />,
-                title: "تقييمات موثوقة",
-                desc: "نظام تقييم حقيقي وشفاف 100% من ضيوف سابقين يضمن لك اختيار الوحدة المثالية بلا مفاجآت",
-                color: "bg-[#4a3359]",
-                shadow: "shadow-purple-800/20"
-              },
-              {
-                icon: <Users className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />,
-                title: "دعم 24/7",
-                desc: "فريق من الخبراء متاح على مدار الساعة للرد على استفساراتك وحل أي تحديات قد تواجهك",
-                color: "bg-[#1a1020]",
-                shadow: "shadow-black/20"
-              }
-            ].map((feature, i) => (
+        {/* Infographic Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20 max-w-6xl mx-auto pt-10">
+          {features.map((feature, i) => (
+            <div key={i} className="flex flex-col items-center group relative text-center">
+              {/* Icon Holder */}
               <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, type: "spring", stiffness: 260, damping: 20 }}
+                className="w-20 h-20 bg-white rounded-[2rem] flex items-center justify-center shadow-xl shadow-[#38264a]/5 border border-purple-50 group-hover:scale-110 group-hover:border-[#c2985a]/20 transition-all duration-500 z-20"
+              >
+                <div className="text-[#c2985a]">{feature.icon}</div>
+              </motion.div>
+
+              {/* Connector Line (Desktop Only) */}
+              <div className="hidden lg:flex flex-col items-center">
+                <motion.div
+                  initial={{ height: 0 }}
+                  whileInView={{ height: feature.lineHeight }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + i * 0.1, duration: 1, ease: "easeOut" }}
+                  className="w-[2px] border-r-2 border-dashed border-[#c2985a]/20"
+                />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#c2985a]/30"></div>
+              </div>
+
+              {/* Content Box */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                whileHover={{ y: -10 }}
-                className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-[2.5rem] lg:rounded-[3rem] border border-gray-50 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 group text-center"
+                transition={{ delay: 1 + i * 0.1, duration: 0.8 }}
+                className={`relative p-8 rounded-[2.5rem] bg-white border border-gray-100 shadow-2xl shadow-gray-200/40 transition-all duration-500 group-hover:shadow-[0_40px_80px_-20px_rgba(56,38,74,0.12)] group-hover:-translate-y-2 ${feature.offset}`}
               >
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ${feature.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-6 sm:mb-7 lg:mb-8 shadow-2xl ${feature.shadow} group-hover:scale-110 transition-transform mx-auto`}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl sm:text-2xl font-black text-gray-[#38264a] mb-3 sm:mb-4 group-hover:text-[#38264a] transition-colors">{feature.title}</h3>
-                <p className="text-gray-400 font-light leading-relaxed text-sm sm:text-base lg:text-lg">{feature.desc}</p>
+                <h3 className="text-xl sm:text-2xl font-black text-[#38264a] mb-4 group-hover:text-[#c2985a] transition-colors">{feature.title}</h3>
+                <p className="text-gray-500 leading-relaxed font-medium">{feature.desc}</p>
               </motion.div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

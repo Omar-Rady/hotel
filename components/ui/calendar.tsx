@@ -36,12 +36,13 @@ function Calendar({
         head_cell:
           "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
         row: "flex w-full mt-2",
-        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-full [&:has([aria-selected].day-range-start)]:rounded-l-full [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent/30 first:[&:has([aria-selected])]:rounded-l-full last:[&:has([aria-selected])]:rounded-r-full focus-within:relative focus-within:z-20",
         day: cn(
           buttonVariants({ variant: "ghost" }),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
+          "h-9 w-9 p-0 font-normal aria-selected:opacity-100 rounded-full transition-all duration-200"
         ),
-        day_range_end: "day-range-end",
+        day_range_start: "day-range-start bg-[#38264a] text-white hover:bg-[#38264a] hover:text-white focus:bg-[#38264a] focus:text-white rounded-full",
+        day_range_end: "day-range-end bg-[#38264a] text-white hover:bg-[#38264a] hover:text-white focus:bg-[#38264a] focus:text-white rounded-full",
         day_selected:
           "bg-gold-gradient text-white hover:bg-gold-gradient hover:text-white focus:bg-gold-gradient focus:text-white shadow-lg shadow-yellow-900/20",
         day_today: "bg-accent text-accent-foreground",
@@ -49,7 +50,7 @@ function Calendar({
           "day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground",
         day_disabled: "text-muted-foreground opacity-50",
         day_range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground",
+          "aria-selected:bg-[#38264a]/5 aria-selected:text-[#38264a] !rounded-none",
         day_hidden: "invisible",
         ...classNames,
       }}

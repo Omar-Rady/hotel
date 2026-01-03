@@ -17,28 +17,28 @@ interface UnifiedHeadingProps {
 
 const VARIANTS = {
   hero: {
-    title: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter text-white",
-    subtitle: "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light text-gray-100",
+    title: "text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white",
+    subtitle: "text-lg md:text-xl lg:text-2xl font-light text-gray-100",
     icon: Crown
   },
   section: {
-    title: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-gray-900",
-    subtitle: "text-sm sm:text-base md:text-lg lg:text-xl font-light text-gray-600",
+    title: "text-4xl md:text-5xl font-black leading-tight text-gray-900",
+    subtitle: "text-base md:text-lg lg:text-xl font-light text-gray-600",
     icon: Star
   },
   discover: {
-    title: "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-gray-900",
-    subtitle: "text-sm sm:text-base md:text-lg font-light text-gray-600",
+    title: "text-3xl md:text-4xl font-black tracking-tight text-gray-900",
+    subtitle: "text-base md:text-lg font-light text-gray-600",
     icon: Sparkles
   },
   properties: {
-    title: "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-gray-[#38264a] tracking-tight",
-    subtitle: "text-sm sm:text-base md:text-lg font-light text-gray-600",
+    title: "text-3xl md:text-4xl font-black text-gray-[#38264a] tracking-tight",
+    subtitle: "text-base md:text-lg font-light text-gray-600",
     icon: Zap
   },
   cities: {
-    title: "text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-gray-900",
-    subtitle: "text-sm sm:text-base md:text-lg font-light text-gray-600",
+    title: "text-3xl md:text-4xl font-black tracking-tight text-gray-900",
+    subtitle: "text-base md:text-lg font-light text-gray-600",
     icon: Sparkles
   }
 } as const;
@@ -61,7 +61,7 @@ const TitleRenderer = ({ title, gradient, animated }: { title: string; gradient:
               {text}
               {animated && (
                 <motion.div
-                  className={`absolute w-[80px] sm:w-[100px] md:w-[110px] -bottom-1.5 sm:-bottom-2 md:-bottom-3 start-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r ${gradient} rounded-full`}
+                  className={`absolute w-[110px] -bottom-2 md:-bottom-3 start-0   h-1.5 md:h-2 bg-gradient-to-r ${gradient} rounded-full`}
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -107,7 +107,7 @@ const Badge = ({ badge, variant }: { badge: string; variant: string }) => {
           animate={{ rotate: [0, 1, -1, 0] }}
           transition={{ duration: 4, repeat: Infinity }}
         />
-        <div className="relative px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 bg-gradient-to-r from-red-500 to-orange-500 text-white text-[10px] sm:text-xs md:text-sm font-black rounded-lg flex items-center gap-1.5 sm:gap-2 shadow-2xl border border-white/20 backdrop-blur-sm overflow-hidden">
+        <div className="relative px-4 md:px-6 py-2 md:py-2.5 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs md:text-sm font-black rounded-lg flex items-center gap-2 shadow-2xl border border-white/20 backdrop-blur-sm overflow-hidden">
           <motion.div
             className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"
             initial={{ y: "100%" }}
@@ -119,7 +119,7 @@ const Badge = ({ badge, variant }: { badge: string; variant: string }) => {
             transition={{ duration: 2, repeat: Infinity }}
             className="relative z-10"
           >
-            <Zap className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
+            <Zap className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </motion.div>
           <span className="relative z-10 uppercase tracking-wide">{badge}</span>
         </div>
@@ -133,10 +133,10 @@ const Badge = ({ badge, variant }: { badge: string; variant: string }) => {
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ type: "spring", stiffness: 300, damping: 15 }}
-      className="inline-flex items-center gap-1.5 sm:gap-2 bg-purple-50 px-3 sm:px-4 md:px-5 py-1 sm:py-1.5 md:py-2 rounded-full border border-purple-100 shadow-sm"
+      className="inline-flex items-center gap-2 bg-purple-50 px-4 md:px-5 py-1.5 md:py-2 rounded-full border border-purple-100 shadow-sm"
     >
       <div className="w-1.5 h-1.5 bg-[#38264a] rounded-full animate-ping"></div>
-      <span className="text-[#38264a] text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-widest">{badge}</span>
+      <span className="text-[#38264a] text-xs md:text-sm font-black uppercase tracking-widest">{badge}</span>
     </motion.div>
   );
 };
@@ -151,13 +151,13 @@ const IconDecoration = ({ variant, icon, IconComponent }: { variant: string; ico
       viewport={{ once: true }}
       transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.2 }}
       whileHover={{ rotate: 5, scale: 1.05 }}
-      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#38264a] to-[#4a3359] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl shadow-purple-500/20"
+      className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-[#38264a] to-[#4a3359] rounded-2xl flex items-center justify-center shadow-xl shadow-purple-500/20"
     >
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
       >
-        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
+        <IconComponent className="w-6 h-6 md:w-7 md:h-7 text-white" />
       </motion.div>
     </motion.div>
   );

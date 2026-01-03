@@ -20,16 +20,14 @@ const GathernHomepage = (): React.JSX.Element => {
   ];
 
   const cities: City[] = [
-    { name: 'مكة', image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=300&h=300&fit=crop', properties: 245 },
-    { name: 'تبوك', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop', properties: 167 }
-    , { name: 'العلا', image: 'https://images.unsplash.com/photo-1583248369069-9d91f1640fe6?w=300&h=300&fit=crop', properties: 156 },
+    { name: 'تبوك', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop', properties: 167 },
+    { name: 'جدة', image: 'https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=300&h=300&fit=crop', properties: 567 },
+    { name: 'العلا', image: 'https://images.unsplash.com/photo-1583248369069-9d91f1640fe6?w=300&h=300&fit=crop', properties: 156 },
     { name: 'أبها', image: 'https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=300&h=300&fit=crop', properties: 203 },
     { name: 'الخبر', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=300&h=300&fit=crop', properties: 312 },
     { name: 'حائل', image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=300&h=300&fit=crop', properties: 134 },
     { name: 'جدة', image: 'https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=300&h=300&fit=crop', properties: 567 },
-    { name: 'الرياض', image: 'https://images.unsplash.com/photo-1556699159-43e0d9db2e9e?w=300&h=300&fit=crop', properties: 892, highlighted: true },
     { name: 'الدمام', image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=300&h=300&fit=crop', properties: 278 },
-    { name: 'تبوك', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop', properties: 167 }
   ];
 
   const properties: Property[] = [

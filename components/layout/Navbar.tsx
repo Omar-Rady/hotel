@@ -1,21 +1,26 @@
 "use client"
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
-import { Sparkles, Globe, Users, Menu, X } from 'lucide-react';
+import { Globe, Users, Menu, X, } from 'lucide-react';
 
 interface NavbarProps {
   isScrolled: boolean;
 }
 
 const Navbar = ({ isScrolled }: NavbarProps) => {
+  const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ease-in-out ${isScrolled
-            ? 'bg-white/80 backdrop-blur-xl shadow-[0_2px_20px_-10px_rgba(0,0,0,0.1)] py-2'
-            : 'bg-gradient-to-b from-[#090112] via-[#38264aad] to-transparent py-3 sm:py-4'
+          ? 'bg-white/80 backdrop-blur-xl shadow-[0_2px_20px_-10px_rgba(0,0,0,0.1)] py-2'
+          : 'bg-gradient-to-b from-[#090112] via-[#38264aad] to-transparent py-3 sm:py-4'
           }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
@@ -26,9 +31,6 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex items-center gap-2 sm:gap-3 cursor-pointer group"
               >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#38264a] rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-purple-900/20 group-hover:rotate-12 transition-transform duration-300">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
                 <span className={`text-xl sm:text-2xl font-black transition-colors duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>Gathern</span>
               </motion.div>
 
@@ -54,21 +56,19 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`hidden md:block px-4 lg:px-6 py-2 lg:py-2.5 rounded-xl lg:rounded-2xl text-xs lg:text-sm font-black border transition-all duration-300 ${isScrolled
-                    ? 'border-[#38264a] text-[#38264a] hover:bg-[#38264a] hover:text-white shadow-sm'
-                    : 'border-white/30 text-white bg-white/10 backdrop-blur-md hover:bg-white hover:text-gray-900'
+                  ? 'border-[#38264a] text-[#38264a] hover:bg-[#38264a] hover:text-white shadow-sm'
+                  : 'border-white/30 text-white bg-white/10 backdrop-blur-md hover:bg-white hover:text-gray-900'
                   }`}
               >
                 بوابة المضيفين
               </motion.button>
 
               <div className="hidden sm:flex items-center gap-2">
-                <button className={`p-2 lg:p-2.5 rounded-xl lg:rounded-2xl transition-all duration-300 ${isScrolled ? 'hover:bg-gray-100 text-gray-700' : 'hover:bg-white/10 text-white'}`}>
-                  <Globe className="w-4 h-4 lg:w-5 lg:h-5" />
-                </button>
+
                 <button
                   className={`flex items-center gap-2 lg:gap-3 p-1.5 pr-3 lg:pr-4 rounded-xl lg:rounded-2xl shadow-sm border transition-all duration-300 ${isScrolled
-                      ? 'bg-white border-gray-100 text-gray-[#38264a] hover:shadow-md'
-                      : 'bg-white/10 border-white/20 text-white backdrop-blur-md hover:bg-white/20'
+                    ? 'bg-white border-gray-100 text-gray-[#38264a] hover:shadow-md'
+                    : 'bg-white/10 border-white/20 text-white backdrop-blur-md hover:bg-white/20'
                     }`}
                 >
                   <span className="text-xs lg:text-sm font-bold">حسابي</span>
@@ -76,6 +76,13 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
                     <Users className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
                   </div>
                 </button>
+
+                {mounted && (
+                  <button className={`p-2 flex items-center gap-2 lg:p-2.5 rounded-xl lg:rounded-2xl transition-all duration-300 ${isScrolled ? 'hover:bg-gray-100 text-gray-700' : 'hover:bg-white/10 text-white'}`}>
+                    <Globe className="w-4 h-4 lg:w-5 lg:h-5" />
+                    <span className="text-xs lg:text-sm font-bold">AR</span>
+                  </button>
+                )}
               </div>
 
               {/* Mobile Menu Button */}
@@ -116,9 +123,6 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-100">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#38264a] rounded-xl flex items-center justify-center shadow-lg">
-                      <Sparkles className="w-6 h-6 text-white" />
-                    </div>
                     <span className="text-2xl font-black text-gray-900">Gathern</span>
                   </div>
                   <button

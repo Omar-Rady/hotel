@@ -104,14 +104,12 @@ const PropertiesSlider = ({ properties }: PropertiesSliderProps) => {
                         <Heart className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors ${favorites.includes(property.id) ? 'fill-red-500 text-red-500' : 'text-gray-400'}`} />
                       </button>
 
-                      <div className="absolute top-5 left-5 flex flex-col gap-2 z-10">
-                        <div className="bg-red-500 text-white text-center px-4 py-1.5 rounded-xl text-xs font-black shadow-lg shadow-red-500/30">
-                          -{property.discount}%
-                        </div>
-                        <div className="bg-[#38264a]/90 backdrop-blur-md text-white text-center px-4 py-1.5 rounded-xl text-[10px] font-bold shadow-lg uppercase tracking-wider">
-                          {property.badge}
-                        </div>
+                      <div className="absolute top-3 sm:top-4 lg:top-5 end-3 sm:end-4 lg:end-5 bg-red-500 text-white text-center px-4 py-1.5 rounded-xl text-xs font-black shadow-lg shadow-red-500/30">
+
+                        -{property.discount}%
                       </div>
+
+
 
                       <div className="absolute bottom-5 right-5 flex items-center gap-1.5 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <Users className="w-4 h-4 text-[#38264a]" />
@@ -136,12 +134,12 @@ const PropertiesSlider = ({ properties }: PropertiesSliderProps) => {
                       </div>
 
                       <div className="flex items-end justify-between pt-6 border-t border-purple-50">
-                        <div className="flex flex-col">
+                        <div className="flex  gap-2 items-center">
+                          <span className="text-red-500 line-through text-lg font-light">{property.oldPrice}</span>
                           <span className="text-[#38264a] font-black text-3xl leading-none">{property.price}<span className="text-sm font-medium text-gray-400 mr-2 italic">ر.س</span></span>
                           <span className="text-sm text-gray-400 font-light mt-1">لكل ليلة</span>
                         </div>
                         <div className="flex flex-col items-end">
-                          <span className="text-gray-300 line-through text-lg font-light">{property.oldPrice}</span>
                           <button className="text-sm font-bold text-[#38264a] mt-2 group-hover:underline flex items-center gap-1">
                             عرض التفاصيل
                             <ChevronLeft className="w-4 h-4" />

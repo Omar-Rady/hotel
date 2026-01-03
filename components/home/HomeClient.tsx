@@ -45,6 +45,16 @@ const HomeClient = ({ heroImages, cities, properties }: HomeClientProps) => {
     to: new Date(new Date().setDate(new Date().getDate() + 1)),
   });
 
+  const handleDateSelect = (newRange: DateRange | undefined) => {
+    if (date?.from && date?.to && newRange?.from && !newRange.to) {
+      // If we had a complete range and user selects a single new date,
+      // explicitly reset to only that date to ensure a fresh start.
+      setDate({ from: newRange.from, to: undefined });
+    } else {
+      setDate(newRange);
+    }
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
@@ -74,7 +84,7 @@ const HomeClient = ({ heroImages, cities, properties }: HomeClientProps) => {
         currentHeroImage={currentHeroImage}
         heroImages={heroImages}
         date={date}
-        setDate={setDate}
+        setDate={handleDateSelect}
       />
       <CitiesSlider cities={cities} setSelectedCity={setSelectedCity} />
       <PropertiesSlider properties={properties} />
