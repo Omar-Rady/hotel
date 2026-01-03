@@ -20,7 +20,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
       <header
         className={`fixed top-0 left-0 right-0 z-[90] transition-all duration-500 ease-in-out ${isScrolled
           ? 'bg-white/80 backdrop-blur-xl shadow-[0_2px_20px_-10px_rgba(0,0,0,0.1)] py-2'
-          : 'bg-gradient-to-b from-[#090112] via-[#38264aad] to-transparent py-3 sm:py-4'
+          : 'bg-gradient-to-b from-[#090112]/70 via-[#38264a]/45 to-transparent py-3 sm:py-4'
           }`}
       >
         <div className="container mx-auto px-4 sm:px-6">
