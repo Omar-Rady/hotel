@@ -24,7 +24,7 @@ const Hero = ({ currentHeroImage, heroImages, date, setDate }: HeroProps) => {
   }, []);
 
   return (
-    <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[400px] w-full">
+    <div className="relative h-[300px] sm:h-[350px] md:h-[500px] lg:h-[500px] w-full">
       {/* Background Images */}
       <div className="absolute inset-0 overflow-hidden">
         <AnimatePresence mode="wait">
@@ -49,7 +49,7 @@ const Hero = ({ currentHeroImage, heroImages, date, setDate }: HeroProps) => {
 
       <div className="container mx-auto px-4 sm:px-6 h-full relative z-20 flex flex-col justify-center">
         {/* Header Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mb-8 sm:mb-12 gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mb-8 sm:mb-12 gap-4 relative top-0 md:top-[-50px] ">
           <UnifiedHeading
             variant="hero"
             title="حيا الله"
@@ -69,7 +69,7 @@ const Hero = ({ currentHeroImage, heroImages, date, setDate }: HeroProps) => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="relative w-full px-4 -mb-[120px] sm:mb-[-80px] md:mb-[-215px]"
+          className="relative w-full px-4 -mb-[120px] sm:mb-[-80px] md:mb-[-315px]"
         >
           {/* Mobile Search Trigger */}
           <div className="md:hidden">

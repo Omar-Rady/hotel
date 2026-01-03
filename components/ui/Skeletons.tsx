@@ -6,7 +6,7 @@ export const HeroSkeleton = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-gray-300 to-gray-200"></div>
 
             <div className="container mx-auto px-4 sm:px-6 h-full relative z-20 flex flex-col justify-center">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mb-8 sm:mb-12 gap-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mb-8 sm:mb-12 gap-4 relative top-0 md:top-[-50px] ">
                     {/* Title skeleton */}
                     <div className="space-y-3">
                         <div className="h-12 sm:h-16 w-48 sm:w-64 bg-white/30 rounded-2xl"></div>
