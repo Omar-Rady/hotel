@@ -204,7 +204,7 @@ const Hero = ({ currentHeroImage, heroImages, date, setDate }: HeroProps) => {
   }, []);
 
   return (
-    <div className="relative h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px] w-full">
+    <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[400px] w-full">
       <div className="absolute inset-0 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
@@ -247,7 +247,7 @@ const Hero = ({ currentHeroImage, heroImages, date, setDate }: HeroProps) => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="relative w-full px-4 -mb-[120px] sm:-mb-[80px] md:-mb-[45px]"
+          className="relative w-full px-4 -mb-[120px] sm:mb-[-80px] md:mb-[-215px]"
         >
           {/* Mobile Layout - Simple Search Bar */}
           <div className="md:hidden">
